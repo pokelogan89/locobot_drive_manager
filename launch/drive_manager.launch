@@ -1,0 +1,22 @@
+<launch>
+
+    <!-- Launch files can set arguments that we use when firing up the nodes. -->
+	<arg name="robot_name"							default="drive_manager"/>
+
+	<node
+    	name="joint_manager_node"
+    	pkg="locobot_experimental_drive_manager" 
+    	type="joint_manager_node.py"
+    	ns="$(arg robot_name)"
+		output="screen">
+	</node>
+
+	<node
+    	name="drive_manager_node"
+    	pkg="locobot_experimental_drive_manager" 
+    	type="drive_manager_node.py"
+    	ns="$(arg robot_name)"
+		output="screen">
+	</node>
+	
+</launch> 
